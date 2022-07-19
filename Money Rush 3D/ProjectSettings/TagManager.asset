@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - bulletSpeed
+  - timeBetweenShots
+  - BulletFinish
+  - DobbelGun
+  - GUN
+  - FiringDobbel
+  - BulletFinish2
+  - -bulletSpeed
+  - -timeBetweenShots
+  - MW
   layers:
   - Default
   - TransparentFX
