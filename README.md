@@ -1,3 +1,3 @@
 # Money-Rush-3D
 
-Nah, I have computers;
+Nah, I have computers!
