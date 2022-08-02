@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 5949445034099046194}
   - component: {fileID: 5949445034099046193}
   - component: {fileID: 5949445034099046192}
-  - component: {fileID: 1055380977}
   m_Layer: 0
   m_Name: BombCoinIcon
   m_TagString: Untagged
@@ -415,18 +414,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1055380977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949445034099046190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e1de1448f01764381a16074124a0d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5949445034147230619
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +792,6 @@ GameObject:
   - component: {fileID: 5949445034808683663}
   - component: {fileID: 5949445034808683662}
   - component: {fileID: 5949445034808683665}
-  - component: {fileID: 641508378}
   m_Layer: 0
   m_Name: BigCoinIcon
   m_TagString: Untagged
@@ -957,18 +943,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &641508378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949445034808683660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e1de1448f01764381a16074124a0d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5949445034873708094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,8 +1289,7 @@ MonoBehaviour:
   BombCoinIcon: 0
   CanPlay: 0
   SoundSetting: 0
-  btnsSetting: 0
-  btnsShop: 0
+  btns: 0
   GameManager: {fileID: 0}
   soundBtn: {fileID: 5949445034657810334}
   soundOnSpr: {fileID: 21300000, guid: 1a10d9b200f6a15479d9bc81e44efa56, type: 3}
@@ -1325,7 +1298,6 @@ MonoBehaviour:
   animBombCoin: {fileID: 5949445034099046192}
   GameOverPanel: {fileID: 5949445035279747000}
   allbtns: {fileID: 5949445034147230619}
-  Shop: {fileID: 0}
 --- !u!1 &5949445035044876162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,10 +1577,10 @@ RectTransform:
   m_Father: {fileID: 5949445034516624479}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: -1336}
-  m_SizeDelta: {x: 143.35272, y: 143.3527}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -340, y: -1336}
+  m_SizeDelta: {x: 143.3527, y: 143.3527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5949445035256593246
 CanvasRenderer:
@@ -2117,7 +2089,6 @@ GameObject:
   - component: {fileID: 5949445035420366309}
   - component: {fileID: 5949445035420366308}
   - component: {fileID: 5949445035420366307}
-  - component: {fileID: 102076476}
   m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
@@ -2238,18 +2209,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &102076476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949445035420366305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e1de1448f01764381a16074124a0d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5949445035435734988
 GameObject:
   m_ObjectHideFlags: 0

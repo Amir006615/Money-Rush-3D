@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GunController : MonoBehaviour
 {
+    public static GunController sws;
 
     public bool isFiringBombCoin;
     public bool isFiringBigCoin;
@@ -20,9 +21,8 @@ public class GunController : MonoBehaviour
     public BulletController bullet;
 
     public double timeBetweenShotsButton;
-    public float bulletSpeedButton;
-
     private float bulletSpeed = 70;
+
     private double timeBetweenShots = 0.2;
     private float shotConuter;
 
@@ -52,15 +52,15 @@ public class GunController : MonoBehaviour
             shotConuter -= Time.deltaTime;
             if (shotConuter <= 0)
             {
-                shotConuter = (float)timeBetweenShots *+ (float)timeBetweenShotsButton;
+                shotConuter = (float)timeBetweenShots + (float)timeBetweenShotsButton;
                 BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as BulletController;
-                newBullet.speed = bulletSpeed + bulletSpeedButton;
+                newBullet.speed = bulletSpeed;
 
                 // to ShootGunDabbel
                 if (isFiringDobbelGun)
                 {
                     BulletController newBulletDobbel = Instantiate(bullet, DobbelGunfirePoint.position, DobbelGunfirePoint.rotation) as BulletController;
-                    newBulletDobbel.speed = bulletSpeed + bulletSpeedButton;
+                    newBulletDobbel.speed = bulletSpeed;
                 }
             }
         }
@@ -70,19 +70,19 @@ public class GunController : MonoBehaviour
             shotConuter -= Time.deltaTime;
             if (shotConuter <= 0)
             {
-                shotConuter = (float)timeBetweenShots *+ (float) timeBetweenShotsButton;
+                shotConuter = (float)timeBetweenShots + (float) timeBetweenShotsButton;
                 BulletController newBullet1 = Instantiate(bullet, firePointDobbel1.position, firePointDobbel1.rotation) as BulletController;
                 BulletController newBullet2 = Instantiate(bullet, firePointDobbel2.position, firePointDobbel2.rotation) as BulletController;
-                newBullet1.speed = bulletSpeed + bulletSpeedButton;
-                newBullet2.speed = bulletSpeed + bulletSpeedButton;
+                newBullet1.speed = bulletSpeed;
+                newBullet2.speed = bulletSpeed;
 
                 // to ShootGunDabbel
                 if (isFiringDobbelGun)
                 {
                     BulletController newBulletDobbel1 = Instantiate(bullet, DobbelGunfirePointDobbel1.position, DobbelGunfirePointDobbel1.rotation) as BulletController;
                     BulletController newBulletDobbel2 = Instantiate(bullet, DobbelGunfirePointDobbel2.position, DobbelGunfirePointDobbel2.rotation) as BulletController;
-                    newBulletDobbel1.speed = bulletSpeed + bulletSpeedButton;
-                    newBulletDobbel2.speed = bulletSpeed + bulletSpeedButton;
+                    newBulletDobbel1.speed = bulletSpeed;
+                    newBulletDobbel2.speed = bulletSpeed;
                 }
             }
         }
@@ -135,14 +135,14 @@ public class GunController : MonoBehaviour
         if (target.gameObject.tag == "bulletSpeed")
         {
             // increasing BulletSpeed
-            bulletSpeed += 10;
+            bulletSpeed += 50;
             
         }
 
         if (target.gameObject.tag == "-bulletSpeed")
         {
             // Reduced BulletSpeed
-            bulletSpeed -= 10;
+            bulletSpeed -= 50;
 
         }
 

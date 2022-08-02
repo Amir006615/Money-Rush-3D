@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager instance;
 
     public static AudioClip Bullet, Option, Enemy, Wall, Click, Clickicon;
     static AudioSource audioSrc;

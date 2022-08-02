@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public Money Money1, Money2; 
     public float maxHealth = 3;
     public float currentHealth;
     private Animator anim;
@@ -45,8 +44,6 @@ public class Health : MonoBehaviour
         if(currentHealth <= 0)
         {
             gameObject.SetActive(false);
-            Money1.money += 100;
-            Money2.money += 100;
         }
    }
     // play Animation

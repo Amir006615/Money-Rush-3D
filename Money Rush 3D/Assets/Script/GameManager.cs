@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public bool CanMove;
     public bool g;
 
-    public GunController Gun1, Gun2;
+    public GunController Gun;
     public BulletController Bullet;
     public CameraSpeed Camera, Cplayer;
     public Player Player;
@@ -71,21 +71,20 @@ public class GameManager : MonoBehaviour
     public void DamegeGun()
     {
         // Increased damage
-        Bullet.Damage += 0.2;
+        Bullet.Damage += 10;
         SoundManager.playSound("Click");
     }
     public void bulletSpeedGun()
     {
         // Increased bulletspeed
-        Gun1.bulletSpeedButton += 10;
-        Gun2.bulletSpeedButton += 10;
+
         SoundManager.playSound("Click");
     }
     public void timeBetweenShotsGun()
     {
         // Decrease timebetweenshots
-        Gun1.timeBetweenShotsButton -= 0.02;
-        Gun2.timeBetweenShotsButton -= 0.02;
+        GunController.sws.timeBetweenShotsButton -= 2;
+
         SoundManager.playSound("Click");
     }
 }
