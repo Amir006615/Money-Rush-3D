@@ -21,4 +21,5 @@ public class Shop : MonoBehaviour
 
         Destroy(ItemTemplate);
     }
+
 }

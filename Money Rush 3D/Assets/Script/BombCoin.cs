@@ -30,7 +30,7 @@ public class BombCoin : MonoBehaviour
             var healthComponent = collision.GetComponent<Health>();
             if (healthComponent != null)
             {
-                healthComponent.TakeDamage(500);
+                healthComponent.TakeDamage(200);
             }
 
             // to deactivate gameObject

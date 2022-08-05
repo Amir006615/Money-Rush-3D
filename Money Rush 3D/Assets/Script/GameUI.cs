@@ -26,8 +26,8 @@ public class GameUI : MonoBehaviour
     private float ActivationTime = 30; // bigCoin activation time
 
 
-    private GameObject hand, restart, BigCoin, BombCoin, levelgun, SettingsBg;
-    public GameObject GameOverPanel, allbtns;
+    private GameObject hand, restart, BigCoin, BombCoin, levelgun, SettingsBg, ShopBg;
+    public GameObject GameOverPanel, allbtns, ShopBtns;
 
     private void Awake()
     {
@@ -37,6 +37,7 @@ public class GameUI : MonoBehaviour
         hand = GameObject.Find("Hand");
         restart = GameObject.Find("Restart");
         SettingsBg = GameObject.Find("SettingsBg");
+        ShopBg = GameObject.Find("ShopBg ");
     }
 
     void Start()
@@ -72,6 +73,7 @@ public class GameUI : MonoBehaviour
             levelgun.SetActive(false);
             SettingsBg.SetActive(false);
             allbtns.SetActive(false);
+            ShopBg.SetActive(false);
             BigCoin.GetComponent<Button>().enabled = false;
             CanPlay = false;
         }
@@ -124,6 +126,13 @@ public class GameUI : MonoBehaviour
     {
         btns = !btns;
         allbtns.SetActive(btns);
+        SoundManager.playSound("Click");
+    }
+
+    public void Shop()
+    {
+        btns = !btns;
+        ShopBtns.SetActive(btns);
         SoundManager.playSound("Click");
     }
 
