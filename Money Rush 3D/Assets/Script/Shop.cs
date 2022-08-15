@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
         public Sprite Image;
         public int Price;
         public bool IsPurchased = false;
+        public Mesh PlayerGun;
     }
 
     [SerializeField] List<ShopItem> ShopItemsList;
@@ -20,6 +21,10 @@ public class Shop : MonoBehaviour
     GameObject g;
     [SerializeField] Transform ShopScrollView;
     Button buyBtn;
+    Button SelectBtn;
+    MeshFilter MeshFilter;
+    Mesh Mesh;
+    public GunController Gun;
 
     void Start()
     {
@@ -31,9 +36,13 @@ public class Shop : MonoBehaviour
             g = Instantiate (ItemTemplate, ShopScrollView);
             g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].Image;
             g.transform.GetChild(1).GetChild (0).GetComponent <Text>().text = ShopItemsList[i].Price.ToString();
-            buyBtn = g.transform.GetChild(2).GetComponent<Button>();
+            buyBtn = g.transform.GetChild(3).GetComponent<Button>();
             buyBtn.interactable = !ShopItemsList[i].IsPurchased;
             buyBtn.AddEventListener(i, onShopItemBtnClicked);
+            MeshFilter = Gun.GetComponent<MeshFilter>();
+            SelectBtn = g.transform.GetChild(2).GetComponent<Button>();
+            SelectBtn.interactable = false; 
+            SelectBtn.AddEventListener(i, se);
         }
 
         Destroy(ItemTemplate);
@@ -44,15 +53,23 @@ public class Shop : MonoBehaviour
 
     void onShopItemBtnClicked(int itemIndex)
     {
+
         if (Game.Instance.HasEnoughCoins(ShopItemsList[itemIndex].Price))
         {
             Game.Instance.UseCoins(ShopItemsList[itemIndex].Price);
             // purchase Item
             ShopItemsList[itemIndex].IsPurchased = true;
+            MeshFilter.mesh = ShopItemsList[itemIndex].PlayerGun;
+
+            // enabel the butten
+            SelectBtn = ShopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
+            SelectBtn.interactable = true;
+
             // disable the butten
-            buyBtn = ShopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
+            buyBtn = ShopScrollView.GetChild(itemIndex).GetChild(3).GetComponent<Button>();
             buyBtn.interactable = false;
             buyBtn.transform.GetChild(0).GetComponent<Text>().text = "PURCHASED";
+
 
             //change UI Text: coins
             SetCoinsUI();
@@ -60,7 +77,14 @@ public class Shop : MonoBehaviour
         else
         {
             NoCoinsAnim.SetTrigger("NoCoins");
-            Debug.Log("You don't have enough coins!!");
+        }
+    }
+
+    void se (int itemIndex)
+    {
+        if (SelectBtn)
+        {
+            MeshFilter.mesh = ShopItemsList[itemIndex].PlayerGun;
         }
     }
     /*-----------------------Shop Coins UI----------------------*/

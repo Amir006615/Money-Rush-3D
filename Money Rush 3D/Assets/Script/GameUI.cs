@@ -25,9 +25,11 @@ public class GameUI : MonoBehaviour
     private float NumberOfBombs = 0; // Number of Bombcoins
     private float ActivationTime = 30; // bigCoin activation time
 
+    [SerializeField] Text CoinsText;
 
     private GameObject hand, restart, BigCoin, BombCoin, levelgun, SettingsBg, ShopBg;
     public GameObject GameOverPanel, allbtns, ShopBtns;
+
 
     private void Awake()
     {
@@ -99,9 +101,9 @@ public class GameUI : MonoBehaviour
                 BombCoin.GetComponent<Button>().enabled = false;
                 animBombCoin.SetBool("BombIcon", true);
             }
-
         }
 
+        SetCoinsUI();
     }
 
     // Using bigcoin
@@ -149,4 +151,10 @@ public class GameUI : MonoBehaviour
         SoundManager.playSound("Click");
 
     }
+
+    public void SetCoinsUI()
+    {
+        CoinsText.text = Game.Instance.Coins.ToString();
+    }
+
 }

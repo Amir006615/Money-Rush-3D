@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     public GameObject HealthBar;
     private float TimeConuterHealthBar;
 
+    public int coin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +83,7 @@ public class Health : MonoBehaviour
         {
             gameObject.SetActive(false);
             HealthBar.SetActive(false);
+            Game.Instance.Coins += coin;
         }
    }
     // play Animation
