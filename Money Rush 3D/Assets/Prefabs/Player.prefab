@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &222480536641949846
 Transform:
   m_ObjectHideFlags: 0
@@ -101,6 +101,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 222480536641949846}
     m_Modifications:
     - target: {fileID: 2246570029785494370, guid: 8f03aade965c68c439a43318d9f27c18, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246570029785494370, guid: 8f03aade965c68c439a43318d9f27c18, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 222480536641949840}
@@ -110,6 +114,10 @@ PrefabInstance:
       objectReference: {fileID: 222480537630478023}
     - target: {fileID: 2246570029785494370, guid: 8f03aade965c68c439a43318d9f27c18, type: 3}
       propertyPath: bulletSpeedButton
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246570029785494370, guid: 8f03aade965c68c439a43318d9f27c18, type: 3}
+      propertyPath: timeBetweenShotsBtn
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2246570029785494370, guid: 8f03aade965c68c439a43318d9f27c18, type: 3}

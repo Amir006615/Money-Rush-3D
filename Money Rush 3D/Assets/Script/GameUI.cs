@@ -10,14 +10,9 @@ public class GameUI : MonoBehaviour
     public bool BigCoinIcon;
     public bool BombCoinIcon;
     public bool CanPlay;
-    public bool SoundSetting;
     public bool btns;
 
     public GameManager GameManager;
-
-    [Header("PreGame")]
-    public Button soundBtn;
-    public Sprite soundOnSpr, soundOffSpr;
 
     public Animator animBigCoin, animBombCoin;
 
@@ -27,8 +22,11 @@ public class GameUI : MonoBehaviour
 
     [SerializeField] Text CoinsText;
 
-    private GameObject hand, restart, BigCoin, BombCoin, levelgun, SettingsBg, ShopBg;
-    public GameObject GameOverPanel, allbtns, ShopBtns;
+    private GameObject hand, restart, BigCoin, BombCoin, levelgun, ShopBg;
+    public GameObject GameOverPanel, ShopBtns;
+
+    public GunController GunGame, GunPrifabs;
+    public BulletController Bullet;
 
 
     private void Awake()
@@ -38,13 +36,11 @@ public class GameUI : MonoBehaviour
         BigCoin = GameObject.Find("BigCoinIcon");
         hand = GameObject.Find("Hand");
         restart = GameObject.Find("Restart");
-        SettingsBg = GameObject.Find("SettingsBg");
         ShopBg = GameObject.Find("ShopBg ");
     }
 
     void Start()
     {
-        SoundSetting = false;
         CanPlay = false;
         BigCoinIcon = true;
         animBigCoin.SetBool("AirplaneIcon", false);
@@ -55,15 +51,6 @@ public class GameUI : MonoBehaviour
 
     void Update()
     {
-        // Unplug the sound // Unfinished
-        if (SoundSetting)
-        {
-            if (soundBtn.GetComponent<Image>().sprite != soundOnSpr)
-                soundBtn.GetComponent<Image>().sprite = soundOnSpr;
-            else if ( soundBtn.GetComponent<Image>().sprite != soundOffSpr)
-                soundBtn.GetComponent<Image>().sprite = soundOffSpr;
-            SoundSetting = false;
-        }
         // start moving
         if (CanPlay)
         {
@@ -73,8 +60,6 @@ public class GameUI : MonoBehaviour
             hand.SetActive(false);
             restart.SetActive(true);
             levelgun.SetActive(false);
-            SettingsBg.SetActive(false);
-            allbtns.SetActive(false);
             ShopBg.SetActive(false);
             BigCoin.GetComponent<Button>().enabled = false;
             CanPlay = false;
@@ -123,14 +108,6 @@ public class GameUI : MonoBehaviour
         SoundManager.playSound("Clickicon");
     }
 
-    // Using settings
-    public void Settings()
-    {
-        btns = !btns;
-        allbtns.SetActive(btns);
-        SoundManager.playSound("Click");
-    }
-
     public void Shop()
     {
         btns = !btns;
@@ -144,17 +121,30 @@ public class GameUI : MonoBehaviour
         SoundManager.playSound("Click");
     }
 
-    // // Unplug the sound
-    public void soundstart()
+    public void DamegeGun()
     {
-        SoundSetting = true;
+        // Increased damage
+        Bullet.Damage += 10;
         SoundManager.playSound("Click");
+    }
+    public void bulletSpeedGun()
+    {
+        // Increased bulletspeed
 
+        SoundManager.playSound("Click");
+    }
+    public void timeBetweenShotsGun()
+    {
+        // Decrease timebetweenshots
+        GunGame.timeBetweenShotsBtn -= 0.5;
+        GunPrifabs.timeBetweenShotsBtn -= 0.5;
+        SoundManager.playSound("Click");
     }
 
     public void SetCoinsUI()
     {
         CoinsText.text = Game.Instance.Coins.ToString();
+        GunPrifabs = GunGame;
     }
 
 }

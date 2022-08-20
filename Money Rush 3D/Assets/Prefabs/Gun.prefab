@@ -376,7 +376,7 @@ MonoBehaviour:
   BigCoin: {fileID: 7966202792543765800, guid: b6abc75c7fb46db45a1f133fae8d2b6a, type: 3}
   BombCoin: {fileID: 3931328522287721520, guid: b85872a18636bc44ba3ebc204a8da2af, type: 3}
   bullet: {fileID: 954799571, guid: 9f0a60d13d3f7bf4e824085788c673d3, type: 3}
-  timeBetweenShotsButton: 2
+  timeBetweenShotsBtn: 0
   firePointBigCoin: {fileID: 0}
   firePoint: {fileID: 2246570030382355714}
   firePointDobbel1: {fileID: 2246570030266996638}

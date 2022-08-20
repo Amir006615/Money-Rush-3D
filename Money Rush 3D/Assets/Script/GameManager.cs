@@ -10,16 +10,18 @@ public class GameManager : MonoBehaviour
     public bool CanMove;
     public bool g;
 
-    public GunController Gun;
-    public BulletController Bullet;
     public CameraSpeed Camera, Cplayer;
     public Player Player;
     public Movment cameramove, player;
     public GameUI UI;
+    public SoundManager Sound;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Sound.AudioSource.enabled = true;
+
         //not moving
         CanMove = false;
         g = true;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
             {
                 CanMove = true;
                 UI.CanPlay = true;
+                Sound.AudioSource.enabled = false;
                 g = false;
             }
         }
@@ -41,13 +44,14 @@ public class GameManager : MonoBehaviour
         // start moving
         if (CanMove)
         {
-             player.enabled = true;
+            player.enabled = true;
              cameramove.enabled = true;
              Camera.enabled = true;
              Cplayer.enabled = true;
              Player.enabled = true;
             CanMove = false;
         }
+
     }
     public bool IgnoreUI()
     {
@@ -66,25 +70,5 @@ public class GameManager : MonoBehaviour
         }
 
         return raycastResultList.Count > 0;
-    }
-
-    public void DamegeGun()
-    {
-        // Increased damage
-        Bullet.Damage += 10;
-        SoundManager.playSound("Click");
-    }
-    public void bulletSpeedGun()
-    {
-        // Increased bulletspeed
-
-        SoundManager.playSound("Click");
-    }
-    public void timeBetweenShotsGun()
-    {
-        // Decrease timebetweenshots
-        GunController.sws.timeBetweenShotsButton -= 2;
-
-        SoundManager.playSound("Click");
     }
 }

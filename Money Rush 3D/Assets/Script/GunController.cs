@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GunController : MonoBehaviour
 {
-    public static GunController sws;
-
     public bool isFiringBombCoin;
     public bool isFiringBigCoin;
     public bool isFiring;
@@ -20,9 +18,9 @@ public class GunController : MonoBehaviour
     public BombCoin BombCoin;
     public BulletController bullet;
 
-    public double timeBetweenShotsButton;
-    private float bulletSpeed = 70;
+    public double timeBetweenShotsBtn;
 
+    private float bulletSpeed = 70;
     private double timeBetweenShots = 0.2;
     private float shotConuter;
 
@@ -52,7 +50,7 @@ public class GunController : MonoBehaviour
             shotConuter -= Time.deltaTime;
             if (shotConuter <= 0)
             {
-                shotConuter = (float)timeBetweenShots + (float)timeBetweenShotsButton;
+                shotConuter = (float)timeBetweenShots + (float)timeBetweenShotsBtn;
                 BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as BulletController;
                 newBullet.speed = bulletSpeed;
 
@@ -70,7 +68,7 @@ public class GunController : MonoBehaviour
             shotConuter -= Time.deltaTime;
             if (shotConuter <= 0)
             {
-                shotConuter = (float)timeBetweenShots + (float) timeBetweenShotsButton;
+                shotConuter = (float)timeBetweenShots + (float)timeBetweenShotsBtn;
                 BulletController newBullet1 = Instantiate(bullet, firePointDobbel1.position, firePointDobbel1.rotation) as BulletController;
                 BulletController newBullet2 = Instantiate(bullet, firePointDobbel2.position, firePointDobbel2.rotation) as BulletController;
                 newBullet1.speed = bulletSpeed;
@@ -107,6 +105,7 @@ public class GunController : MonoBehaviour
                 }
                 isFiringBombCoin = false; 
         }
+
 
     }
 

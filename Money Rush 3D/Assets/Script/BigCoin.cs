@@ -31,7 +31,7 @@ public class BigCoin : MonoBehaviour
             var healthComponent = collision.GetComponent<Health>();
             if (healthComponent != null)
             {
-                healthComponent.TakeDamage(100000);
+                healthComponent.TakeDamage(1000000000000);
             }
         }
 

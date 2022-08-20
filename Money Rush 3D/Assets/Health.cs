@@ -76,7 +76,7 @@ public class Health : MonoBehaviour
 
     // Damage Enemy
     public void TakeDamage(float amount)
-   {
+    {
         currentHealth -= amount;
         
         if(currentHealth <= 0)
@@ -85,7 +85,7 @@ public class Health : MonoBehaviour
             HealthBar.SetActive(false);
             Game.Instance.Coins += coin;
         }
-   }
+    }
     // play Animation
     public void EnemyAnimation()
     {
