@@ -1097,7 +1097,7 @@ RectTransform:
   m_Children:
   - {fileID: 401281675}
   m_Father: {fileID: 2004130633}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 433406518}
   - component: {fileID: 433406517}
   m_Layer: 0
-  m_Name: 'ShopBg '
+  m_Name: IconShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,7 +1231,7 @@ RectTransform:
   m_Children:
   - {fileID: 1016161800}
   m_Father: {fileID: 2004130633}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.851, y: 0.35456252}
   m_AnchorMax: {x: 0.961, y: 0.41400003}
@@ -2119,7 +2119,7 @@ RectTransform:
   m_Children:
   - {fileID: 1417855399}
   m_Father: {fileID: 2004130633}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5664,7 +5664,7 @@ RectTransform:
   - {fileID: 726149443}
   - {fileID: 175853098}
   m_Father: {fileID: 2004130633}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6344,6 +6344,10 @@ PrefabInstance:
     - target: {fileID: 5949445035256593245, guid: 6a97de8109b885547a7658b801ccea28, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949445035279747000, guid: 6a97de8109b885547a7658b801ccea28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949445035339963393, guid: 6a97de8109b885547a7658b801ccea28, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -22,7 +22,7 @@ public class GameUI : MonoBehaviour
 
     [SerializeField] Text CoinsText;
 
-    private GameObject hand, restart, BigCoin, BombCoin, levelgun, ShopBg;
+    private GameObject hand, restart, BigCoin, BombCoin, levelgun, IconShop;
     public GameObject GameOverPanel, ShopBtns;
 
     public GunController GunGame, GunPrifabs;
@@ -36,7 +36,7 @@ public class GameUI : MonoBehaviour
         BigCoin = GameObject.Find("BigCoinIcon");
         hand = GameObject.Find("Hand");
         restart = GameObject.Find("Restart");
-        ShopBg = GameObject.Find("ShopBg ");
+        IconShop = GameObject.Find("IconShop");
     }
 
     void Start()
@@ -60,7 +60,7 @@ public class GameUI : MonoBehaviour
             hand.SetActive(false);
             restart.SetActive(true);
             levelgun.SetActive(false);
-            ShopBg.SetActive(false);
+            IconShop.SetActive(false);
             BigCoin.GetComponent<Button>().enabled = false;
             CanPlay = false;
         }
